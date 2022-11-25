@@ -1,5 +1,5 @@
 package lesson10;
-import lesson10.com.walking.Main;
+import lesson10.com.walking.counterAggregation.Main;
 
 /**
  * Не стал создавать отдельный репозиторий для com.walking поэтому он внутри lesson10

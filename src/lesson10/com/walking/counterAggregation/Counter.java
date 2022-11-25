@@ -1,6 +1,6 @@
-package lesson10.com.walking;
+package lesson10.com.walking.counterAggregation;
 
-class counterAggregation {
+class Counter {
     private final String name;
     private final String unitType;
     private int counter;
@@ -17,13 +17,13 @@ class counterAggregation {
         return this.counter;
     }
 
-    counterAggregation(String name, String unitType, int counter) {
+    Counter(String name, String unitType, int counter) {
         this.name = name;
         this.unitType = unitType;
         this.counter = counter;
     }
 
-    counterAggregation(String name, String unitType) {
+    Counter(String name, String unitType) {
         this(name, unitType, 0);
     }
 
