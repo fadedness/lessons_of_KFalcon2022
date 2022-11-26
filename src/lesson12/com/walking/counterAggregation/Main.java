@@ -1,4 +1,4 @@
-package lesson10.com.walking.counterAggregation;
+package lesson12.com.walking.counterAggregation;
 
 public class Main {
     public void main() {

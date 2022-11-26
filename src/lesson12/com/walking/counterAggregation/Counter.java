@@ -1,4 +1,4 @@
-package lesson10.com.walking.counterAggregation;
+package lesson12.com.walking.counterAggregation;
 
 class Counter {
     private final String name;
