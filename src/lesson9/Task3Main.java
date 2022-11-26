@@ -26,7 +26,7 @@ public class Task3Main {
         primeNumbersFinder.findPrimeNumbers();
 
         printPrimeNumbers(primeNumbersFinder.primeNumbers);
-        printSumOfPrimeNumbers(primeNumbersFinder, scanner);
+        printPrimeNumbersSum(primeNumbersFinder, requirePrimeNumbersAmount(primeNumbersFinder, scanner));
         System.out.println("Goodbye!");
 
         scanner.close();
@@ -37,24 +37,34 @@ public class Task3Main {
         System.out.println(Arrays.toString(primeNumbers));
     }
 
-    public static void printSumOfPrimeNumbers(Task3PrimeNumbersFinder primeNumbersFinder, Scanner scanner) {
+    public static void printPrimeNumbersSum(Task3PrimeNumbersFinder primeNumbersFinder, int primeNumbersAmount) {
+        if (primeNumbersAmount > 0) {
+            System.out.println("");
+            System.out.printf("The sum of first %d Prime numbers is ", primeNumbersAmount);
+            System.out.println(primeNumbersFinder.sum(primeNumbersAmount));
+        }
+    }
+
+    public static int requirePrimeNumbersAmount(Task3PrimeNumbersFinder primeNumbersFinder, Scanner scanner) {
+        int primeNumbersAmount = 0;
         System.out.println("Print the sum of these numbers?\n1. Yes\n2. No\n3. Enter how many.");
         int menuChoice = scanner.nextInt();
 
         if (menuChoice == 1) {
-            System.out.printf("Sum of %d Prime numbers is ", primeNumbersFinder.totalNumbers);
-            System.out.println(primeNumbersFinder.sum());
+            primeNumbersAmount = primeNumbersFinder.primeNumbers.length;
         }
         else if (menuChoice == 3) {
-            System.out.print("Enter: ");
-            int amountOfPrimeNumbersToSum = scanner.nextInt();
-            if (amountOfPrimeNumbersToSum > primeNumbersFinder.totalNumbers) {
+            System.out.print("Enter strictly positive number: ");
+            primeNumbersAmount = scanner.nextInt();
+            if (primeNumbersAmount > primeNumbersFinder.primeNumbers.length) {
                 System.out.print("Amount entered is more than Prime numbers found. Overriding to all.");
-                amountOfPrimeNumbersToSum = primeNumbersFinder.totalNumbers;
+                primeNumbersAmount = primeNumbersFinder.primeNumbers.length;
             }
-            System.out.println("");
-            System.out.printf("Sum of %d Prime numbers is ", amountOfPrimeNumbersToSum);
-            System.out.println(primeNumbersFinder.sum(amountOfPrimeNumbersToSum));
+            else if (primeNumbersAmount < 1) {
+                System.out.println("Amount entered is less than 1. Not going to print the sum.");
+            }
         }
+
+        return primeNumbersAmount;
     }
 }

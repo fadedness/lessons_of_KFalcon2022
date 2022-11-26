@@ -2,10 +2,8 @@ package lesson9;
 
 public class Task3PrimeNumbersFinder {
     public final int[] primeNumbers;
-    public final int totalNumbers;
 
     public Task3PrimeNumbersFinder(int totalNumbers) {
-        this.totalNumbers = totalNumbers;
         this.primeNumbers = new int[totalNumbers];
     }
 
@@ -14,7 +12,7 @@ public class Task3PrimeNumbersFinder {
     }
 
     public int[] findPrimeNumbers() {
-        for (int i = 0; i < totalNumbers; i++) {
+        for (int i = 0; i < primeNumbers.length; i++) {
             if (i == 0) {
                 primeNumbers[i] = 2;
             } else {
@@ -62,7 +60,8 @@ public class Task3PrimeNumbersFinder {
         }
         return sumOfPrimeNumbers;
     }
+
     public int sum() {
-        return  sum(totalNumbers);
+        return  sum(primeNumbers.length);
     }
 }
