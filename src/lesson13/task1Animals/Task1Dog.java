@@ -1,6 +1,6 @@
-package lesson11.task1Animals;
+package lesson13.task1Animals;
 
-import lesson11.task1Animals.Task1Animal;
+import lesson13.task1Animals.Task1Animal;
 
 public class Task1Dog extends Task1Animal {
     private Task1Dog() {

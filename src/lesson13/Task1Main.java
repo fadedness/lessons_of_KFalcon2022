@@ -1,7 +1,7 @@
-package lesson11;
+package lesson13;
 
-import lesson11.task1Animals.Task1Cat;
-import lesson11.task1Animals.Task1Dog;
+import lesson13.task1Animals.Task1Cat;
+import lesson13.task1Animals.Task1Dog;
 
 /**
  * Реализовать класс Animal, содержащий protected-конструктор без параметров,

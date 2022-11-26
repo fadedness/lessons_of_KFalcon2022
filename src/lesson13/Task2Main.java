@@ -1,9 +1,9 @@
-package lesson11;
+package lesson13;
 
-import lesson11.task2Animals.Task2Animal;
-import lesson11.task2Animals.Task2Dog;
-import lesson11.task2Animals.Task2Cat;
-import lesson11.task2Animals.Task2Cow;
+import lesson13.task2Animals.Task2Animal;
+import lesson13.task2Animals.Task2Dog;
+import lesson13.task2Animals.Task2Cat;
+import lesson13.task2Animals.Task2Cow;
 
 /**
  * Реализуйте класс Animal. Реализуйте его наследников: Dog, Cat, Cow.
