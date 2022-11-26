@@ -4,7 +4,7 @@ public class Task2Animal {
     public final String name;
     public final String type;
 
-    Task2Animal(String name, String type) {
+    public Task2Animal(String name, String type) {
         this.name = name;
         this.type = type;
     }
