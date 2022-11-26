@@ -1,13 +1,15 @@
 package lesson12.task1RightFigure;
 
 public class Task1Square extends Task1RightFigure{
-    final String horizontalSymbol;
-    final String verticalSymbol;
+    //удваеваем символ для горизонтальной линии, чтобы выглядело нормально
+    final String horizontalSymbol = "--";
+    final String verticalSymbol = "|";
+    //два пробела чтобы соответствовало горизонтальной линии
+    final String insideSpaceSymbol = "  ";
+    final String cornersSymbol = "*";
 
     public Task1Square(int length) {
         super(length, 4);
-        this.horizontalSymbol = symbolDash;
-        this.verticalSymbol = symbolPipe;
     }
 
     @Override
@@ -28,11 +30,11 @@ public class Task1Square extends Task1RightFigure{
     private String getHorizontalLine() {
         String horizontalLine = "";
 
-        horizontalLine += " ";
+        horizontalLine += cornersSymbol;
         for (int i = 0; i < length; i++) {
             horizontalLine += horizontalSymbol;
         }
-        horizontalLine += " ";
+        horizontalLine += cornersSymbol;
 
         return horizontalLine;
     }
@@ -42,7 +44,7 @@ public class Task1Square extends Task1RightFigure{
 
         verticalLine += verticalSymbol;
         for (int j = 0; j < length; j++) {
-            verticalLine += " ";
+            verticalLine += insideSpaceSymbol;
         }
         verticalLine += verticalSymbol;
 

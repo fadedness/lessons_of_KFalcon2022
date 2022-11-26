@@ -1,18 +1,17 @@
 package lesson12.task1RightFigure;
 
 public class Task1Triangle extends Task1RightFigure{
-    final String horizontalSymbol;
-    final String horizontalAltSymbol;
-    final String leftVerticalSymbol;
-    final String rightVerticalSymbol;
+    //удваеваем символ для горизонтальной линии, чтобы выглядело нормально
+    final String horizontalSymbol = "--";
+    //альтернативный вариант
+    final String horizontalAltSymbol = "__";
+    final String leftVerticalSymbol = "/";
+    final String rightVerticalSymbol = "\\";
+    final String insideSpaceSymbol = " ";
+    final String cornersSymbol = "*";
 
     public Task1Triangle(int length) {
         super(length, 3);
-        //удваеваем символ для горизонтальной линии, чтобы выглядело нормально
-        this.horizontalSymbol = symbolDash.repeat(2);
-        this.horizontalAltSymbol = symbolGround.repeat(2);
-        this.leftVerticalSymbol = symbolSlash;
-        this.rightVerticalSymbol = symbolBackSlash;
     }
 
     @Override
@@ -47,50 +46,51 @@ public class Task1Triangle extends Task1RightFigure{
 
     private String getBottomHorizontalLine() {
         String horizontalLine = "";
-
-        for (int i = 0; i < length; i++) {
-            horizontalLine += horizontalSymbol;
-        }
-
+        horizontalLine += cornersSymbol;
+        horizontalLine += horizontalSymbol.repeat(length);
+        horizontalLine += cornersSymbol;
         return horizontalLine;
     }
 
     private String getMiddleHorizontalLine(int offsetFromMiddle) {
         String horizontalLine = "";
-        int emptySpaces = length - offsetFromMiddle - 1;
+        int emptySpaces = length - offsetFromMiddle;
 
-        horizontalLine += " ".repeat(emptySpaces);
+        //left side
+        horizontalLine += insideSpaceSymbol.repeat(emptySpaces);
         horizontalLine += leftVerticalSymbol;
-        horizontalLine += " ".repeat(offsetFromMiddle);
+        horizontalLine += insideSpaceSymbol.repeat(offsetFromMiddle);
 
-        horizontalLine += " ".repeat(offsetFromMiddle);
+        //right side
+        horizontalLine += insideSpaceSymbol.repeat(offsetFromMiddle);
         horizontalLine += rightVerticalSymbol;
-        horizontalLine += " ".repeat(emptySpaces);
+        horizontalLine += insideSpaceSymbol.repeat(emptySpaces);
 
         return horizontalLine;
     }
 
     private String getTopHorizontalLine() {
         String horizontalLine = "";
-
-        for (int i = 0; i < length; i++) {
-            horizontalLine += "__";//horizontalAltSymbol;
-        }
-
+        horizontalLine += cornersSymbol;
+        //horizontalAltSymbol
+        horizontalLine += horizontalSymbol.repeat(length);
+        horizontalLine += cornersSymbol;
         return horizontalLine;
     }
 
     private String getMiddleHorizontalAltLine(int offsetFromMiddle) {
         String horizontalLine = "";
-        int emptySpaces = length - offsetFromMiddle - 1;
+        int emptySpaces = length - offsetFromMiddle;
 
-        horizontalLine += " ".repeat(emptySpaces);
+        //left side
+        horizontalLine += insideSpaceSymbol.repeat(emptySpaces);
         horizontalLine += rightVerticalSymbol;
-        horizontalLine += " ".repeat(offsetFromMiddle);
+        horizontalLine += insideSpaceSymbol.repeat(offsetFromMiddle);
 
-        horizontalLine += " ".repeat(offsetFromMiddle);
+        //right side
+        horizontalLine += insideSpaceSymbol.repeat(offsetFromMiddle);
         horizontalLine += leftVerticalSymbol;
-        horizontalLine += " ".repeat(emptySpaces);
+        horizontalLine += insideSpaceSymbol.repeat(emptySpaces);
 
         return horizontalLine;
     }
