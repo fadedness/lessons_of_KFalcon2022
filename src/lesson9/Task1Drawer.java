@@ -12,7 +12,7 @@ public class Task1Drawer {
         this.verticalSymbol = verticalSymbol;
     }
 
-    public void DrawRectangle() {
+    public void drawRectangle() {
         int length = requireInt("Enter rectangle's length: ");
         int width = requireInt("Enter rectangle's width: ");
 
@@ -55,6 +55,7 @@ public class Task1Drawer {
         for (int i = 0; i < width; i++) {
             verticalLines += verticalLinesUnit;
         }
+
         return verticalLines;
     }
 
@@ -66,6 +67,7 @@ public class Task1Drawer {
         }
 
         verticalLinesUnit += this.verticalSymbol + "\n";
+        
         return verticalLinesUnit;
     }
 }

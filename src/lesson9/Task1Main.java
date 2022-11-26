@@ -1,7 +1,5 @@
 package lesson9;
 
-import java.util.Scanner;
-
 /**
  * вынести строковые и символьные литералы в константы.
  * Попробуйте нарисовать прямоугольник, используя "==" для каждой единицы длины
@@ -24,6 +22,6 @@ import java.util.Scanner;
 public class Task1Main {
     public static void main(String[] args) {
         Task1Drawer drawer = new Task1Drawer("==", "||");
-        drawer.DrawRectangle();
+        drawer.drawRectangle();
     }
 }
