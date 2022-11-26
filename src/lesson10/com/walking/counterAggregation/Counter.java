@@ -17,6 +17,10 @@ class Counter {
         return this.counter;
     }
 
+    void setCounter(int value) {
+        this.counter = value;
+    }
+
     Counter(String name, String unitType, int counter) {
         this.name = name;
         this.unitType = unitType;
@@ -25,31 +29,6 @@ class Counter {
 
     Counter(String name, String unitType) {
         this(name, unitType, 0);
-    }
-
-    int increase() {
-        this.counter++;
-        return this.counter;
-    }
-
-    int decrease() {
-        this.counter--;
-        return this.counter;
-    }
-
-    int increase(int number) {
-        this.counter += number;
-        return this.counter;
-    }
-
-    int decrease(int number) {
-        this.counter -= number;
-        return this.counter;
-    }
-
-    int reset() {
-        this.counter = 0;
-        return this.counter;
     }
 
     String str() {

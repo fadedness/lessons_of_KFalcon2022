@@ -31,7 +31,7 @@ import lesson10.com.walking.counterAggregation.Main;
 
 public class Task1Main {
     public static void main(String[] args) {
-        Main com_walking_main = new Main();
-        com_walking_main.main();
+        Main comWalkingMain = new Main();
+        comWalkingMain.main();
     }
 }

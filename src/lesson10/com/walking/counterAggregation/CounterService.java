@@ -3,15 +3,8 @@ package lesson10.com.walking.counterAggregation;
 class CounterService {
     private Counter[] countersArray;
 
-    CounterService(Counter...args) {
-        int totalCounters = 0;
-        for (Counter counter : args) {
-            totalCounters++;
-        }
-        countersArray = new Counter[totalCounters];
-        for (int i = 0; i < args.length; i++) {
-            countersArray[i] = args[i];
-        }
+    CounterService(Counter...counters) {
+        countersArray = counters;
     }
 
     Counter[] getCountersArray() {
@@ -19,48 +12,67 @@ class CounterService {
     }
 
     Counter getCounterByName(String name) {
-        int index = -1;
         for (int i = 0; i < countersArray.length; i++) {
             if (name == countersArray[i].getName()) {
-                index = i;
-                break;
+                return countersArray[i];
             }
         }
 
-        /**
-         * если нет такого счётчика будет ошибка
-         * Index -1 out of bounds
-         * её надо ловить там, где вызывается этот метод
-         * но мы пока не проходили это
-         */
-
-        return countersArray[index];
+        return null;
     }
 
-    void increaseCounter(Counter counter, int amount) {
-        counter.increase(amount);
+    Counter increaseCounter(Counter counter, int amount) {
+        counter.setCounter(counter.getCounter() + amount);
+        return counter;
     }
 
-    void increaseCounter(String name, int amount) {
+    Counter increaseCounter(String name, int amount) {
         Counter counter = getCounterByName(name);
-        counter.increase(amount);
+        counter.setCounter(counter.getCounter() + amount);
+        return counter;
     }
 
-    void increaseCounter(Counter counter) {
-        counter.increase();
+    Counter incrementCounter(Counter counter) {
+        counter.setCounter(counter.getCounter() + 1);
+        return counter;
     }
 
-    void increaseCounter(String name) {
+    Counter incrementCounter(String name) {
         Counter counter = getCounterByName(name);
-        counter.increase();
+        counter.setCounter(counter.getCounter() + 1);
+        return counter;
     }
 
-    void resetCounter(Counter counter) {
-        counter.reset();
+    Counter decreaseCounter(Counter counter, int amount) {
+        counter.setCounter(counter.getCounter() - amount);
+        return counter;
     }
 
-    void resetCounter(String name) {
+    Counter decreaseCounter(String name, int amount) {
         Counter counter = getCounterByName(name);
-        counter.reset();
+        counter.setCounter(counter.getCounter() - amount);
+        return counter;
+    }
+
+    Counter decrementCounter(Counter counter) {
+        counter.setCounter(counter.getCounter() - 1);
+        return counter;
+    }
+
+    Counter decrementCounter(String name) {
+        Counter counter = getCounterByName(name);
+        counter.setCounter(counter.getCounter() - 1);
+        return counter;
+    }
+
+    Counter resetCounter(Counter counter) {
+        counter.setCounter(0);
+        return counter;
+    }
+
+    Counter resetCounter(String name) {
+        Counter counter = getCounterByName(name);
+        counter.setCounter(0);
+        return counter;
     }
 }
