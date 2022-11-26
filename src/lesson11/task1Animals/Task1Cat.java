@@ -8,6 +8,7 @@ public class Task1Cat extends Task1Animal {
     }
 
     public Task1Cat(String color) {
+        this();
         System.out.printf("I'm a %s cat.\n", color);
     }
 }
