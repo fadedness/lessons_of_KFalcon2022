@@ -1,48 +1,33 @@
 package lesson9;
 
-import java.util.Scanner;
-
 public class Task1Drawer {
-    final Scanner scanner = new Scanner(System.in);
     final String horizontalSymbol;
     final String verticalSymbol;
+    final String fillerSymbol;
 
-    public Task1Drawer(String horizontalSymbol, String verticalSymbol) {
+    public Task1Drawer(String horizontalSymbol, String verticalSymbol, String fillerSymbol) {
         this.horizontalSymbol = horizontalSymbol;
         this.verticalSymbol = verticalSymbol;
+        this.fillerSymbol = fillerSymbol;
     }
 
-    public void drawRectangle() {
-        int length = requireInt("Enter rectangle's length: ");
-        int width = requireInt("Enter rectangle's width: ");
-
-        scanner.close();
-
+    public String drawRectangle(int length, int width) {
         String horizontalLine = createHorizontalLine(length);
         String verticalLines = createVerticalLines(length, width);
 
-        printRectangle(horizontalLine, verticalLines);
-    }
-    private int requireInt(String requiringMessage) {
-        System.out.print(requiringMessage);
-
-        return scanner.nextInt();
-    }
-
-    private void printRectangle(String horizontalLine, String verticalLines) {
-        System.out.print(horizontalLine + verticalLines + horizontalLine);
+        return horizontalLine + verticalLines + horizontalLine;
     }
 
     private String createHorizontalLine(int length) {
         String horizontalLine = "";
 
-        horizontalLine += " ".repeat(this.verticalSymbol.length());
+        horizontalLine += fillerSymbol.repeat(this.verticalSymbol.length());
 
         for (int i = 0; i < length; i++) {
             horizontalLine += this.horizontalSymbol;
         }
 
-        horizontalLine += " \n";
+        horizontalLine += fillerSymbol.repeat(this.verticalSymbol.length()) + "\n";
 
         return horizontalLine;
     }
@@ -63,11 +48,11 @@ public class Task1Drawer {
         String verticalLinesUnit = this.verticalSymbol;
 
         for (int i = 0; i < length; i++) {
-            verticalLinesUnit += " ".repeat(this.horizontalSymbol.length());
+            verticalLinesUnit += fillerSymbol.repeat(this.horizontalSymbol.length());
         }
 
         verticalLinesUnit += this.verticalSymbol + "\n";
-        
+
         return verticalLinesUnit;
     }
 }
