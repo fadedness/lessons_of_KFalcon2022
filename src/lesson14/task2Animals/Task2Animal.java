@@ -1,4 +1,4 @@
-package lesson12.task2Animals;
+package lesson14.task2Animals;
 
 public class Task2Animal {
     public final String name;

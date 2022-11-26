@@ -1,4 +1,4 @@
-package lesson12.task1RightFigure;
+package lesson14.task1RightFigure;
 
 public class Task1RightFigure {
     public final int length;

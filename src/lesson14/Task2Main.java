@@ -1,10 +1,10 @@
-package lesson12;
+package lesson14;
 
 
-import lesson12.task2Animals.Task2Animal;
-import lesson12.task2Animals.Task2Dog;
-import lesson12.task2Animals.Task2Cat;
-import lesson12.task2Animals.Task2Cow;
+import lesson14.task2Animals.Task2Animal;
+import lesson14.task2Animals.Task2Dog;
+import lesson14.task2Animals.Task2Cat;
+import lesson14.task2Animals.Task2Cow;
 
 /**
  * Используя новые знания, упростите реализацию задачи 2 из предыдущего урока.

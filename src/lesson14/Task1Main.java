@@ -1,7 +1,7 @@
-package lesson12;
+package lesson14;
 
-import lesson12.task1RightFigure.Task1Triangle;
-import lesson12.task1RightFigure.Task1Square;
+import lesson14.task1RightFigure.Task1Triangle;
+import lesson14.task1RightFigure.Task1Square;
 
 import java.util.Scanner;
 

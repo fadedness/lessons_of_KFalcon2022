@@ -1,4 +1,4 @@
-package lesson12.task1RightFigure;
+package lesson14.task1RightFigure;
 
 public class Task1Triangle extends Task1RightFigure{
     //удваеваем символ для горизонтальной линии, чтобы выглядело нормально
