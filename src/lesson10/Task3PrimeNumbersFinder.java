@@ -1,4 +1,4 @@
-package lesson9;
+package lesson10;
 
 public class Task3PrimeNumbersFinder {
     public final int[] primeNumbers;

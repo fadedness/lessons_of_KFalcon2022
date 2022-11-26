@@ -1,4 +1,4 @@
-package lesson9;
+package lesson10;
 
 public class Task2Counter {
     public final String name;

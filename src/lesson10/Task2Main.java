@@ -1,4 +1,4 @@
-package lesson9;
+package lesson10;
 
 /**
  * реализуйте неизменность поля названия у класса Counter.
