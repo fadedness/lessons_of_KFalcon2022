@@ -14,13 +14,11 @@ public class Task2Counter {
     }
 
     public int increase() {
-        this.counter++;
-        return this.counter;
+        return ++counter;
     }
 
     public int decrease() {
-        this.counter--;
-        return this.counter;
+        return --counter;
     }
 
     public int increaseBy(int number) {
